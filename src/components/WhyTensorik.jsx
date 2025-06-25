@@ -73,19 +73,22 @@ const WhyTensorik = () => {
             ? "ml-auto -mr-[30px]"
             : "mr-auto -ml-[30px]";
           const hoverTranslate = isLeft
-            ? "group-hover:translate-x-[-30px]"
-            : "group-hover:translate-x-[30px]";
+            ? "group-hover:translate-x-[-33px]"
+            : "group-hover:translate-x-[33px]";
+          const dotPosition = isLeft ? "right-[-14px]" : "left-[-14px]";
 
           return (
             <div
               key={index}
-              className={`relative mb-24 ${isLeft ? "pr-[50%]" : "pl-[50%]"}`}
+              className={`relative mb-24 ${
+                isLeft ? "pr-[50%]" : "pl-[50%]"
+              } group`}
               data-aos={item.aosDirection}
               data-aos-delay={item.aosDelay}
             >
               {/* Card */}
               <div
-                className={`group bg-gradient-to-br from-[#25292e] to-[#333842] border border-white/10 p-10 rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.4)] max-w-[460px] relative z-10 overflow-hidden card-with-animated-line
+                className={`bg-gradient-to-br from-[#25292e] to-[#333842] border border-white/10 p-10 rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,0.4)] max-w-[460px] relative z-10 overflow-hidden card-with-animated-line
                 ${alignmentClass}
                 transition-transform duration-300 ease-in-out transform hover:scale-[1.03] ${hoverTranslate}`}
               >
@@ -98,7 +101,7 @@ const WhyTensorik = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[1.8rem] font-bold text-[#F9FAFB] mb-4">
+                <h3 className="text-[1.5rem] sm:text-[1.6rem] md:text-[1.8rem] font-bold text-[#F9FAFB] mb-4">
                   {item.title}
                 </h3>
 
@@ -110,10 +113,12 @@ const WhyTensorik = () => {
 
               {/* Dot */}
               <div
-                className={`absolute top-[50px] w-7 h-7 rounded-full bg-[#2C2F36] border-[5px] border-[#42A5F5] z-30 transition duration-500 ${
-                  isLeft ? "right-[-14px]" : "left-[-14px]"
-                } hover:shadow-[0_0_0_12px_rgba(66,165,245,0.2),0_0_25px_rgba(66,165,245,0.6)]`}
-              ></div>
+                className={`absolute top-[50px] w-7 h-7 rounded-full bg-[#2C2F36] border-[5px] border-[#42A5F5] z-30 ${
+                  isLeft ? "right-2 " : "left-2 "
+                } pointer-events-none`}
+              >
+                <span className="block w-full h-full rounded-full transition duration-300 group-hover:shadow-[0_0_0_12px_rgba(66,165,245,0.2),0_0_25px_rgba(66,165,245,0.6)]"></span>
+              </div>
             </div>
           );
         })}

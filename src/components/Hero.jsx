@@ -6,22 +6,26 @@ const Hero = () => {
     <section className="relative bg-gradient-to-r from-[#1A1D20] to-[#25292e] text-white py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
         {/* Left Content */}
-        <div className="text-center md:text-left md:w-1/2 mb-10 md:mb-0">
+        <div
+          className="text-center md:text-left md:w-1/2 mb-10 md:mb-0"
+          data-aos="fade-right"
+          data-aos-duration="1200"
+        >
           <h1
             className="text-3xl md:text-5xl font-bold leading-tight mb-4"
-            data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos="fade-down"
+            data-aos-delay="100"
           >
             Unlock Your Potential with{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#42A5F5] to-[#2196F3]">
               Cutting-Edge AI
             </span>
           </h1>
+
           <p
             className="text-lg md:text-xl mb-8 opacity-90"
             data-aos="fade-up"
-            data-aos-delay="200"
-            data-aos-duration="1000"
+            data-aos-delay="300"
           >
             Tensorik offers comprehensive courses, practical workshops, and a
             vibrant community to help you master Artificial Intelligence.
@@ -31,12 +35,13 @@ const Hero = () => {
           <div
             className="flex flex-col sm:flex-row justify-center md:justify-start gap-4"
             data-aos="fade-up"
-            data-aos-delay="400"
-            data-aos-duration="1000"
+            data-aos-delay="500"
           >
             <Link
               to="/coming-soon"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-md flex items-center justify-center space-x-2 transition duration-300 transform hover:scale-105"
+              data-aos="zoom-in"
+              data-aos-delay="600"
             >
               <span>Explore Courses</span>
               <svg
@@ -57,6 +62,8 @@ const Hero = () => {
             <a
               href="#workshop"
               className="border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-full shadow-md flex items-center justify-center space-x-2 transition duration-300 transform hover:scale-105"
+              data-aos="zoom-in"
+              data-aos-delay="700"
             >
               <span>Register for Workshop</span>
               <svg
@@ -79,9 +86,8 @@ const Hero = () => {
         {/* Right Image */}
         <div
           className="md:w-1/2 flex justify-center"
-          data-aos="zoom-in"
-          data-aos-delay="600"
-          data-aos-duration="1000"
+          data-aos="zoom-in-up"
+          data-aos-delay="800"
         >
           <img
             src="https://placehold.co/600x400/2C3E50/A0AEC0?text=AI+Learning+Illustration"
@@ -92,7 +98,11 @@ const Hero = () => {
       </div>
 
       {/* Background SVG Blur Shapes */}
-      <div className="absolute top-0 left-0 w-full h-full -z-0 opacity-20">
+      <div
+        className="absolute top-0 left-0 w-full h-full -z-0 opacity-20"
+        data-aos="fade"
+        data-aos-delay="900"
+      >
         <svg
           className="w-full h-full"
           viewBox="0 0 100 100"

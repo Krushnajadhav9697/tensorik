@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../common/Header";
 
 const ComingSoon = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });

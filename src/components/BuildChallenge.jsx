@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BuildChallenge = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,10 @@ const BuildChallenge = () => {
     level: "",
   });
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -21,10 +27,10 @@ const BuildChallenge = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 px-6  bg-gradient-to-br from-[#181B1E] to-[#2C3E50] text-center text-[#F9FAFB]">
+    <section className="py-16 md:py-24 px-6 bg-gradient-to-br from-[#181B1E] to-[#2C3E50] text-center text-[#F9FAFB]">
       <div className="container mx-auto max-w-6xl">
         {/* Banner */}
-        <div className="mb-16">
+        <div className="mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#06b6d4]">
             Build with Tensorik Challenge
           </h2>
@@ -57,7 +63,10 @@ const BuildChallenge = () => {
 
         {/* About & Participate */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <div className="p-8 rounded-lg shadow-xl text-left bg-[#1A1D20]">
+          <div
+            className="p-8 rounded-lg shadow-xl text-left bg-[#1A1D20]"
+            data-aos="fade-right"
+          >
             <h3 className="text-2xl font-bold text-[#3b82f6] mb-4">
               About the Challenge
             </h3>
@@ -82,7 +91,11 @@ const BuildChallenge = () => {
               </li>
             </ul>
           </div>
-          <div className="p-8 rounded-lg shadow-xl text-left bg-[#1A1D20]">
+
+          <div
+            className="p-8 rounded-lg shadow-xl text-left bg-[#1A1D20]"
+            data-aos="fade-left"
+          >
             <h3 className="text-2xl font-bold text-[#3b82f6] mb-4">
               How to Participate
             </h3>
@@ -110,8 +123,8 @@ const BuildChallenge = () => {
           </div>
         </div>
 
-        {/* Levels */}
-        <div className="mb-16">
+        {/* Levels Table */}
+        <div className="mb-16" data-aos="fade-up">
           <h3 className="text-3xl font-bold text-[#F9FAFB] mb-8">
             Challenge Levels
           </h3>
@@ -148,7 +161,6 @@ const BuildChallenge = () => {
                 <tr className="hover:bg-[#232830] transition-colors">
                   <td className="p-4 font-semibold">Pro</td>
                   <td className="p-4">
-                    {" "}
                     For experienced developers. Tackle complex, real-world
                     problems with advanced techniques.
                   </td>
@@ -166,6 +178,7 @@ const BuildChallenge = () => {
         <div
           id="challenge-form"
           className="max-w-xl mx-auto p-8 rounded-lg shadow-xl text-left bg-[#1A1D20]"
+          data-aos="fade-up"
         >
           <h3 className="text-3xl font-bold text-[#3b82f6] mb-6 text-center">
             Submit Your Project

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Header from "../components/Header";
+import Header from "../common/Header";
 import WhyTensorik from "../components/WhyTensorik";
 import FounderSection from "../components/FounderSection";
 import Testimonials from "../components/Testimonials";
